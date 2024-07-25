@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rio Software</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            transition: background-color 0.3s, color 0.3s;
+            background-color: #ffffff;
+            color: #000000;
         }
         .container {
             text-align: center;
@@ -25,7 +25,7 @@
             margin: 0;
         }
         .subtitle {
-            color: var(--subtitle-color);
+            color: gray;
             font-size: 1.2rem;
             margin: 10px 0 20px;
         }
@@ -55,22 +55,10 @@
             border: none;
             cursor: pointer;
             font-size: 2rem;
-            color: var(--icon-color);
+            color: #000000;
         }
         .theme-toggle .material-icons {
             font-size: 2rem;
-        }
-        :root {
-            --background-color: #ffffff;
-            --text-color: #000000;
-            --subtitle-color: gray;
-            --icon-color: #000000;
-        }
-        [data-theme="dark"] {
-            --background-color: #121212;
-            --text-color: #ffffff;
-            --subtitle-color: lightgray;
-            --icon-color: #ffffff;
         }
     </style>
 </head>
@@ -89,23 +77,8 @@
 
     <script>
         function toggleTheme() {
-            const body = document.body;
             const icon = document.getElementById('theme-icon');
-            if (body.getAttribute('data-theme') === 'dark') {
-                body.setAttribute('data-theme', 'light');
-                icon.textContent = 'dark_mode';
-            } else {
-                body.setAttribute('data-theme', 'dark');
-                icon.textContent = 'light_mode';
-            }
-        }
-
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.body.setAttribute('data-theme', 'dark');
-            document.getElementById('theme-icon').textContent = 'light_mode';
-        } else {
-            document.body.setAttribute('data-theme', 'light');
-            document.getElementById('theme-icon').textContent = 'dark_mode';
+            icon.textContent = icon.textContent === 'dark_mode' ? 'light_mode' : 'dark_mode';
         }
     </script>
 </body>
