@@ -3,116 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="icon" href="assets/favicon.png">
-<meta name="title" content="Rio">
-<meta name="description" content="Join, Execute , Dominate.">
-<meta name="theme-color" content="#080808">   
- <style>
-        body, html {
+    <title>Rio Software</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        body {
             margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
+            font-family: Arial, sans-serif;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            justify-content: center;
-            background-color: #000;
-            color: #fff;
-            font-family: 'Inter', sans-serif;
+            height: 100vh;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
         }
-        .grid-overlay {
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAwIiBoZWlnaHQ9IjEwMDAiIHZpZXdCb3g9IjAgMCAxMDAwIDEwMDAiPjxwYXRoIGQ9Ik0wIDBoMTAwMHYxMDAwSDBWMHoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2IyYjJiMiIgc3Ryb2tlLXdpZHRoPSIwLjUiLz48L3N2Zz4=');
-            background-size: 50px 50px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            opacity: 1;
-            animation: fadeIn 1.5s ease-out forwards;
-        }
-        .fade-in {
-            opacity: 0;
-            animation: fadeIn 1.5s ease-out forwards;
-        }
-        .slide-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: slideIn 1.5s ease-out forwards;
-        }
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes slideIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        nav {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            position: absolute;
-            top: 0;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-        nav a {
-            text-decoration: none;
-            color: #b2b2b2;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: white;
-        }
-        .title {
-            font-size: 4rem;
+        .container {
             text-align: center;
-            margin-bottom: 2px; /* Space between title and status */
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
         }
         .subtitle {
-            font-size: 1.5rem;
-            text-align: center;
-            color: #999; /* Grey color for status */
-            margin: 0;
+            color: var(--subtitle-color);
+            font-size: 1.2rem;
+            margin: 10px 0 20px;
         }
-        .icon-tl {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 40px;
-    height: 40px;
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            flex: 1;
+            max-width: 120px;
+        }
+        .button:hover {
+            background-color: #333;
+        }
+        .theme-toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 2rem;
+            color: var(--icon-color);
+        }
+        .theme-toggle .material-icons {
+            font-size: 2rem;
+        }
+        :root {
+            --background-color: #ffffff;
+            --text-color: #000000;
+            --subtitle-color: gray;
+            --icon-color: #000000;
+        }
+        [data-theme="dark"] {
+            --background-color: #121212;
+            --text-color: #ffffff;
+            --subtitle-color: lightgray;
+            --icon-color: #ffffff;
         }
     </style>
 </head>
 <body>
-    <div class="grid-overlay"></div>
-    <nav>
-        <ul>
-            <li><a href="#">Docs</a></li>
-            <li><a href="#">Server</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
-    </nav>
-    <img src="assets/favicon.png" alt="Logo" class="icon-tl">
-    <div class="fade-in">
-        <h1 class="title">Rio</h1>
-        <p class="subtitle">Coming Soon.</p>
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <span class="material-icons" id="theme-icon">dark_mode</span>
+    </button>
+    <div class="container">
+        <h1>Rio Software</h1>
+        <p class="subtitle">A revolutionary scripting utility</p>
+        <div class="buttons">
+            <button class="button" onclick="window.location.href='https://www.example.com';">Join the launch</button>
+            <button class="button" onclick="window.location.href='https://www.example.com/about';">About</button>
+        </div>
     </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.getElementById('theme-icon');
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.setAttribute('data-theme', 'light');
+                icon.textContent = 'dark_mode';
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                icon.textContent = 'light_mode';
+            }
+        }
+
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.setAttribute('data-theme', 'dark');
+            document.getElementById('theme-icon').textContent = 'light_mode';
+        } else {
+            document.body.setAttribute('data-theme', 'light');
+            document.getElementById('theme-icon').textContent = 'dark_mode';
+        }
+    </script>
 </body>
 </html>
