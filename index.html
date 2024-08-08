@@ -6,8 +6,45 @@
     <title>Rio Software</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
-<body __processed_c1b4b00f-7870-4233-81d2-3c4cbe32a51c__="true" bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJkaXNhYmxlZCIsIkZBQ0VCT09LIjoiZGlzYWJsZWQiLCJUV0lUVEVSIjoiZGlzYWJsZWQiLCJSRURESVQiOiJkaXNhYmxlZCIsIlBJTlRFUkVTVCI6ImRpc2FibGVkIiwiSU5TVEFHUkFNIjoiZGlzYWJsZWQiLCJMSU5LRURJTiI6ImRpc2FibGVkIiwiQ09ORklHIjoiZGlzYWJsZWQifSwidmVyc2lvbiI6IjIuMC4xNiIsInNjb3JlIjoyMDAxNn1d"><video controls="" autoplay="" name="media" data-video="0"><source src="https://cdn.nest.rip/uploads/14b4a9e0-32ec-437c-b413-638ae2ef0057.mp4" type="video/mp4"></video></body>
+    <h1>How to download Rio</h1>
+    <video id="videoElement" controls autoplay name="media">
+        Gang, ur shit don't support the video :/
+    </video>
+
+    <script>
+        const ES = 'aHR0cHM6Ly9jZG4ubmVzdC5yaXAvdXBsb2Fkcy8xNGI0YTllMC0zMmVjLTQzN2MtYjQxMy02MzhhZTJlZjAwNTcubXA0';
+        const DS = atob(ES);
+
+        // Set the source of the video element
+        const videoElement = document.getElementById('videoElement');
+        const sourceElement = document.createElement('source');
+        sourceElement.src = DS;
+        sourceElement.type = 'video/mp4';
+        videoElement.appendChild(sourceElement);
+    </script>
 </body>
 </html>
