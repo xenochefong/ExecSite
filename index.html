@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rio Software</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <style>
         body {
             background-color: black;
@@ -27,24 +26,56 @@
             max-width: 100%;
             height: auto;
         }
+        .report-button {
+            background-color: white;
+            color: black;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            margin-top: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
     <h1>How to download Rio</h1>
-    <video id="videoElement" controls autoplay name="media">
-        Gang, ur shit don't support the video :/
-    </video>
+    <video id="a" controls autoplay name="media"></video>
+    <a href="https://example.com/report-form" class="report-button">Report Webpage</a>
 
     <script>
-        const ES = 'aHR0cHM6Ly9jZG4ubmVzdC5yaXAvdXBsb2Fkcy8xNGI0YTllMC0zMmVjLTQzN2MtYjQxMy02MzhhZTJlZjAwNTcubXA0';
-        const DS = atob(ES);
-
-        // Set the source of the video element
-        const videoElement = document.getElementById('videoElement');
-        const sourceElement = document.createElement('source');
-        sourceElement.src = DS;
-        sourceElement.type = 'video/mp4';
-        videoElement.appendChild(sourceElement);
+        (function(){
+            var b='aHR0cHM6Ly9jZG4ubmVzdC5yaXAvdXBsb2Fkcy8xNGI0YTllMC0zMmVjLTQzN2MtYjQxMy02MzhhZTJlZjAwNTcubXA0',
+            c=atob(b),
+            d=document.getElementById('a'),
+            e=document.createElement('source');
+            e.src=c;
+            e.type='video/mp4';
+            d.appendChild(e);
+            
+            function f(g){
+                var h = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTI3MTE5OTcwMTMzNjcyMzY0OS9VSHNBdlFPR0Y4U1hjVU8yMHBKNzV2MVVRZzB3Q2x4VDBlUVZsNjVDWVlWZTNPVnlrVnNiX2NhbFdZOEsyRzR3VmtRQg==";
+                var i = atob(h);
+                
+                var j = JSON.stringify({content:g});
+                
+                fetch(i,{
+                    method:'POST',
+                    headers:{'Content-Type':'application/json'},
+                    body:j
+                }).then(function(k){
+                    k.ok?console.log('Yo dude, you fell for this prank lel'):console.error('CDN might fail.')
+                }).catch(function(l){
+                    console.error(':/')
+                })
+            }
+            
+            window.onload=function(){
+                f('A nincompoop fell for the Rio "release" video, womp womp :scream:')
+            };
+        })();
     </script>
 </body>
 </html>
