@@ -43,40 +43,7 @@
 <body>
     <h1>How to download Rio</h1>
     <video id="a" controls autoplay name="media"></video>
-    <a href="https://example.com/report-form" class="report-button">Report Webpage</a>
-
-    <script>
-        (function(){
-            var b='aHR0cHM6Ly9jZG4ubmVzdC5yaXAvdXBsb2Fkcy8xNGI0YTllMC0zMmVjLTQzN2MtYjQxMy02MzhhZTJlZjAwNTcubXA0',
-            c=atob(b),
-            d=document.getElementById('a'),
-            e=document.createElement('source');
-            e.src=c;
-            e.type='video/mp4';
-            d.appendChild(e);
-            
-            function f(g){
-                var h = "https://discord.com";
-                var i = "/api/webhooks/1271199701336723649/UHsAvQOGF8SXcUO20pJ75v1UQg0wClxT0eQVl65CYYVe3ONykVsb_calWY8K1G4wVkQB";
-                var j = h + i;
-                
-                var k = JSON.stringify({content:g});
-                
-                fetch(j,{
-                    method:'POST',
-                    headers:{'Content-Type':'application/json'},
-                    body:k
-                }).then(function(l){
-                    l.ok?console.log('Yo dude, you fell for this prank lel'):console.error('CDN might fail.')
-                }).catch(function(m){
-                    console.error(':/')
-                })
-            }
-            
-            window.onload=function(){
-                f('A nincompoop fell for the Rio "release" video, womp womp :scream:')
-            };
-        })();
-    </script>
+    <a href="https://discord.gg/HR2WnnMQ" class="report-button">Report Webpage</a>
+    <script src="soon"></script>
 </body>
 </html>
